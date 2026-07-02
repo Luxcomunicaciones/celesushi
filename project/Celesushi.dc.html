@@ -1,0 +1,649 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600;700;800;900&amp;display=swap" rel="stylesheet">
+<style>
+body{margin:0;background:#0B0D12;font-family:'Archivo',system-ui,sans-serif}
+::selection{background:#29ABE2;color:#06222F}
+</style>
+</helmet>
+
+<div style="background:#0B0D12;color:#F2F5F8;font-family:'Archivo',system-ui,sans-serif;min-height:100vh">
+
+  <!-- ============ HEADER ============ -->
+  <header data-screen-label="Header" style="position:sticky;top:0;z-index:60;background:rgba(11,13,18,.88);backdrop-filter:blur(14px);border-bottom:1px solid rgba(255,255,255,.07)">
+    <div style="max-width:1200px;margin:0 auto;padding:10px 20px;display:flex;align-items:center;gap:18px;flex-wrap:wrap">
+      <a href="#inicio" style="display:flex;align-items:center;text-decoration:none">
+        <img src="assets/logo.png" alt="CeleSushi Delivery" style="height:52px;display:block">
+      </a>
+      <nav style="display:flex;gap:4px;flex-wrap:wrap;margin-left:auto;align-items:center">
+        <a href="#promos" style="color:#C7D3DD;text-decoration:none;font-size:14px;font-weight:600;padding:8px 12px;border-radius:8px" style-hover="color:#29ABE2;background:rgba(41,171,226,.08)">Promos</a>
+        <a href="#carta" style="color:#C7D3DD;text-decoration:none;font-size:14px;font-weight:600;padding:8px 12px;border-radius:8px" style-hover="color:#29ABE2;background:rgba(41,171,226,.08)">Carta</a>
+        <a href="#sucursales" style="color:#C7D3DD;text-decoration:none;font-size:14px;font-weight:600;padding:8px 12px;border-radius:8px" style-hover="color:#29ABE2;background:rgba(41,171,226,.08)">Sucursales</a>
+        <button onClick="{{ openCart }}" style="display:flex;align-items:center;gap:8px;background:#29ABE2;color:#062230;border:none;border-radius:999px;padding:10px 18px;font-family:'Archivo',sans-serif;font-size:14px;font-weight:800;cursor:pointer;margin-left:8px;transition:background .15s" style-hover="background:#4DC0F0">
+          <span>Mi pedido</span>
+          <span style="background:#062230;color:#7FD4FA;border-radius:999px;min-width:22px;height:22px;display:grid;place-items:center;font-size:12px;font-weight:800;padding:0 6px">{{ cartCount }}</span>
+        </button>
+      </nav>
+    </div>
+  </header>
+
+  <!-- ============ HERO ============ -->
+  <section id="inicio" data-screen-label="Inicio / Hero" style="position:relative;overflow:hidden">
+    <div style="position:absolute;inset:0;background:radial-gradient(900px 500px at 78% 30%, rgba(41,171,226,.14), transparent 65%), radial-gradient(600px 400px at 10% 90%, rgba(232,25,44,.08), transparent 60%);pointer-events:none"></div>
+    <div style="max-width:1200px;margin:0 auto;padding:56px 20px 40px;display:flex;flex-wrap:wrap;gap:40px;align-items:center;position:relative">
+      <div style="flex:1 1 460px;min-width:300px">
+        <div style="display:inline-flex;align-items:center;gap:8px;border:1px solid rgba(41,171,226,.4);color:#7FD4FA;border-radius:999px;padding:6px 14px;font-size:12px;font-weight:700;letter-spacing:.14em;text-transform:uppercase">Sushi delivery · Santiago</div>
+        <h1 style="margin:18px 0 14px;font-size:clamp(38px,6vw,64px);line-height:1.02;font-weight:900;letter-spacing:-.02em">Sushi fresco,<br>directo a <span style="color:#29ABE2">tu puerta</span>.</h1>
+        <p style="margin:0 0 26px;color:#9AA7B4;font-size:17px;line-height:1.6;max-width:52ch">Rolls recién hechos, promos para compartir y ese antojo que no espera. Elige lo tuyo, envíalo por WhatsApp y nosotros nos encargamos del resto.</p>
+        <div style="display:flex;gap:12px;flex-wrap:wrap">
+          <a href="#promos" style="background:#E8192C;color:#fff;text-decoration:none;border-radius:12px;padding:14px 26px;font-size:15px;font-weight:800;transition:background .15s" style-hover="background:#FF3346">Ver promos</a>
+          <a href="#carta" style="border:1px solid rgba(41,171,226,.55);color:#29ABE2;text-decoration:none;border-radius:12px;padding:14px 26px;font-size:15px;font-weight:800;transition:all .15s" style-hover="background:rgba(41,171,226,.1)">Explorar la carta</a>
+        </div>
+        <div style="display:flex;gap:28px;flex-wrap:wrap;margin-top:34px">
+          <div><div style="font-size:26px;font-weight:900;color:#29ABE2">7</div><div style="font-size:13px;color:#9AA7B4;font-weight:500">sucursales en Santiago</div></div>
+          <div style="width:1px;background:rgba(255,255,255,.1)"></div>
+          <div><div style="font-size:26px;font-weight:900;color:#29ABE2">10 km</div><div style="font-size:13px;color:#9AA7B4;font-weight:500">de cobertura por sucursal</div></div>
+          <div style="width:1px;background:rgba(255,255,255,.1)"></div>
+          <div><div style="font-size:26px;font-weight:900;color:#29ABE2">+100</div><div style="font-size:13px;color:#9AA7B4;font-weight:500">preparaciones en carta</div></div>
+        </div>
+      </div>
+      <div style="flex:1 1 400px;min-width:300px">
+        <div style="position:relative;border-radius:24px;overflow:hidden;background:#000;border:1px solid rgba(255,255,255,.08);box-shadow:0 30px 80px rgba(0,0,0,.5);aspect-ratio:3/2">
+          <img src="assets/food/p1-01.jpg" alt="Sushi CeleSushi" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover">
+          <img data-hero-slide="0" src="assets/food/p1-01.jpg" alt="Sushi Burgers" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;transition:opacity 1s ease;opacity:1">
+          <img data-hero-slide="1" src="assets/food/p1-06.jpg" alt="Promo 50 VIP" loading="lazy" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;transition:opacity 1s ease;opacity:0">
+          <img data-hero-slide="2" src="assets/food/p1-19.jpg" alt="Dúo Nikkei" loading="lazy" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;transition:opacity 1s ease;opacity:0">
+          <img data-hero-slide="3" src="assets/food/p2-06.jpg" alt="Gohan Mixto" loading="lazy" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;transition:opacity 1s ease;opacity:0">
+          <img data-hero-slide="4" src="assets/food/p1-15.jpg" alt="30 Premium" loading="lazy" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;transition:opacity 1s ease;opacity:0">
+          <div style="position:absolute;right:14px;top:14px;background:rgba(11,13,18,.82);backdrop-filter:blur(8px);border:1px solid rgba(255,255,255,.1);border-radius:999px;padding:8px 16px;font-size:13px;font-weight:800;color:#E7EEF4">{{ heroCaption }}</div>
+          <div style="position:absolute;left:14px;bottom:14px;background:rgba(11,13,18,.82);backdrop-filter:blur(8px);border:1px solid rgba(255,255,255,.1);border-radius:12px;padding:10px 14px;display:flex;align-items:center;gap:10px">
+            <span style="width:8px;height:8px;border-radius:50%;background:#25D366"></span>
+            <span style="font-size:13px;font-weight:700;color:#E7EEF4">Pedidos abiertos por WhatsApp</span>
+          </div>
+          <div style="position:absolute;right:16px;bottom:16px;display:flex;gap:6px">
+            <span data-hero-dot="0" style="width:7px;height:7px;border-radius:50%;transition:background .4s;background:#29ABE2"></span>
+            <span data-hero-dot="1" style="width:7px;height:7px;border-radius:50%;transition:background .4s;background:rgba(255,255,255,.35)"></span>
+            <span data-hero-dot="2" style="width:7px;height:7px;border-radius:50%;transition:background .4s;background:rgba(255,255,255,.35)"></span>
+            <span data-hero-dot="3" style="width:7px;height:7px;border-radius:50%;transition:background .4s;background:rgba(255,255,255,.35)"></span>
+            <span data-hero-dot="4" style="width:7px;height:7px;border-radius:50%;transition:background .4s;background:rgba(255,255,255,.35)"></span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ PROMOS ============ -->
+  <section id="promos" data-screen-label="Promos" style="scroll-margin-top:90px;max-width:1200px;margin:0 auto;padding:48px 20px 20px">
+    <div style="display:flex;align-items:end;justify-content:space-between;gap:16px;flex-wrap:wrap;margin-bottom:20px">
+      <div>
+        <div style="color:#E8192C;font-size:12px;font-weight:800;letter-spacing:.16em;text-transform:uppercase;margin-bottom:8px">Las favoritas</div>
+        <h2 style="margin:0;font-size:clamp(28px,4vw,40px);font-weight:900;letter-spacing:-.02em">Promociones</h2>
+      </div>
+      <div style="display:flex;gap:8px;flex-wrap:wrap">
+        <sc-for list="{{ promoTabs }}" as="t" hint-placeholder-count="3">
+          <sc-if value="{{ t.active }}" hint-placeholder-val="{{ false }}">
+            <button onClick="{{ t.onClick }}" style="font-family:'Archivo',sans-serif;font-size:13px;font-weight:800;border-radius:999px;padding:9px 16px;cursor:pointer;background:#E8192C;color:#fff;border:1px solid #E8192C">{{ t.label }}</button>
+          </sc-if>
+          <sc-if value="{{ t.inactive }}" hint-placeholder-val="{{ true }}">
+            <button onClick="{{ t.onClick }}" style="font-family:'Archivo',sans-serif;font-size:13px;font-weight:800;border-radius:999px;padding:9px 16px;cursor:pointer;background:transparent;color:#C7D3DD;border:1px solid rgba(255,255,255,.16);transition:all .15s" style-hover="border-color:rgba(232,25,44,.6);color:#fff">{{ t.label }}</button>
+          </sc-if>
+        </sc-for>
+      </div>
+    </div>
+    <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:18px">
+      <sc-for list="{{ promos }}" as="p" hint-placeholder-count="4">
+        <article style="background:#12161E;border:1px solid rgba(255,255,255,.07);border-radius:18px;overflow:hidden;display:flex;flex-direction:column;transition:transform .18s, border-color .18s" style-hover="transform:translateY(-3px);border-color:rgba(41,171,226,.4)">
+          <div style="position:relative;background:#000">
+            <img src="{{ p.img }}" alt="{{ p.name }}" loading="lazy" style="width:100%;height:185px;object-fit:cover;display:block">
+            <span style="position:absolute;top:12px;left:12px;background:#E8192C;color:#fff;font-size:12px;font-weight:800;border-radius:999px;padding:5px 12px;letter-spacing:.04em">{{ p.pzsLabel }}</span>
+          </div>
+          <div style="padding:16px 18px 18px;display:flex;flex-direction:column;gap:10px;flex:1">
+            <h3 style="margin:0;font-size:19px;font-weight:900;letter-spacing:-.01em">{{ p.name }}</h3>
+            <div style="display:flex;flex-direction:column;gap:4px;flex:1">
+              <sc-for list="{{ p.lines }}" as="ln" hint-placeholder-count="2">
+                <div style="font-size:12.5px;color:#9AA7B4;line-height:1.45;display:flex;gap:7px"><span style="color:#29ABE2;flex:none;margin-top:1px">•</span><span>{{ ln }}</span></div>
+              </sc-for>
+            </div>
+            <div style="display:flex;align-items:center;justify-content:space-between;gap:10px;margin-top:4px">
+              <div style="font-size:22px;font-weight:900;color:#fff">{{ p.price }}</div>
+              <sc-if value="{{ p.inCart }}" hint-placeholder-val="{{ false }}">
+                <div style="display:flex;align-items:center;gap:2px;background:#0B0D12;border:1px solid rgba(41,171,226,.5);border-radius:999px;padding:3px">
+                  <button onClick="{{ p.onDec }}" style="width:30px;height:30px;border:none;background:transparent;color:#29ABE2;font-size:18px;font-weight:800;cursor:pointer;border-radius:50%" style-hover="background:rgba(41,171,226,.15)">−</button>
+                  <span style="min-width:22px;text-align:center;font-weight:800;font-size:14px">{{ p.qty }}</span>
+                  <button onClick="{{ p.onInc }}" style="width:30px;height:30px;border:none;background:transparent;color:#29ABE2;font-size:18px;font-weight:800;cursor:pointer;border-radius:50%" style-hover="background:rgba(41,171,226,.15)">+</button>
+                </div>
+              </sc-if>
+              <sc-if value="{{ p.notInCart }}" hint-placeholder-val="{{ true }}">
+                <button onClick="{{ p.onInc }}" style="background:#29ABE2;color:#062230;border:none;border-radius:999px;padding:10px 18px;font-family:'Archivo',sans-serif;font-size:13.5px;font-weight:800;cursor:pointer;transition:background .15s" style-hover="background:#4DC0F0">Agregar</button>
+              </sc-if>
+            </div>
+          </div>
+        </article>
+      </sc-for>
+    </div>
+  </section>
+
+  <!-- ============ CARTA ============ -->
+  <section id="carta" data-screen-label="Carta" style="scroll-margin-top:90px;max-width:1200px;margin:0 auto;padding:48px 20px 20px">
+    <div style="color:#29ABE2;font-size:12px;font-weight:800;letter-spacing:.16em;text-transform:uppercase;margin-bottom:8px">Todo el menú</div>
+    <h2 style="margin:0 0 18px;font-size:clamp(28px,4vw,40px);font-weight:900;letter-spacing:-.02em">La carta</h2>
+    <div style="display:flex;gap:8px;flex-wrap:wrap;margin-bottom:22px">
+      <sc-for list="{{ cats }}" as="c" hint-placeholder-count="8">
+        <sc-if value="{{ c.active }}" hint-placeholder-val="{{ false }}">
+          <button onClick="{{ c.onClick }}" style="font-family:'Archivo',sans-serif;font-size:13px;font-weight:800;border-radius:999px;padding:9px 16px;cursor:pointer;background:#29ABE2;color:#062230;border:1px solid #29ABE2">{{ c.label }}</button>
+        </sc-if>
+        <sc-if value="{{ c.inactive }}" hint-placeholder-val="{{ true }}">
+          <button onClick="{{ c.onClick }}" style="font-family:'Archivo',sans-serif;font-size:13px;font-weight:800;border-radius:999px;padding:9px 16px;cursor:pointer;background:transparent;color:#C7D3DD;border:1px solid rgba(255,255,255,.16);transition:all .15s" style-hover="border-color:rgba(41,171,226,.6);color:#fff">{{ c.label }}</button>
+        </sc-if>
+      </sc-for>
+    </div>
+    <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(320px,1fr));gap:12px">
+      <sc-for list="{{ items }}" as="i" hint-placeholder-count="8">
+        <div style="background:#12161E;border:1px solid rgba(255,255,255,.07);border-radius:14px;padding:14px 16px;display:flex;gap:14px;align-items:center;transition:border-color .18s" style-hover="border-color:rgba(41,171,226,.35)">
+          <sc-if value="{{ i.showImg }}" hint-placeholder-val="{{ false }}">
+            <img src="{{ i.img }}" alt="{{ i.name }}" loading="lazy" style="width:62px;height:62px;border-radius:12px;object-fit:cover;background:#000;flex:none">
+          </sc-if>
+          <div style="flex:1;min-width:0">
+            <div style="font-size:15px;font-weight:800;letter-spacing:.01em">{{ i.name }}</div>
+            <div style="font-size:12.5px;color:#9AA7B4;line-height:1.45;margin-top:2px">{{ i.desc }}</div>
+          </div>
+          <div style="display:flex;flex-direction:column;align-items:end;gap:8px;flex:none">
+            <div style="font-size:15px;font-weight:900;color:#7FD4FA">{{ i.price }}</div>
+            <sc-if value="{{ i.inCart }}" hint-placeholder-val="{{ false }}">
+              <div style="display:flex;align-items:center;gap:2px;background:#0B0D12;border:1px solid rgba(41,171,226,.5);border-radius:999px;padding:2px">
+                <button onClick="{{ i.onDec }}" style="width:26px;height:26px;border:none;background:transparent;color:#29ABE2;font-size:16px;font-weight:800;cursor:pointer;border-radius:50%" style-hover="background:rgba(41,171,226,.15)">−</button>
+                <span style="min-width:20px;text-align:center;font-weight:800;font-size:13px">{{ i.qty }}</span>
+                <button onClick="{{ i.onInc }}" style="width:26px;height:26px;border:none;background:transparent;color:#29ABE2;font-size:16px;font-weight:800;cursor:pointer;border-radius:50%" style-hover="background:rgba(41,171,226,.15)">+</button>
+              </div>
+            </sc-if>
+            <sc-if value="{{ i.notInCart }}" hint-placeholder-val="{{ true }}">
+              <button onClick="{{ i.onInc }}" style="background:transparent;border:1px solid rgba(41,171,226,.55);color:#29ABE2;border-radius:999px;padding:6px 14px;font-family:'Archivo',sans-serif;font-size:12.5px;font-weight:800;cursor:pointer;transition:all .15s" style-hover="background:rgba(41,171,226,.12)">Agregar</button>
+            </sc-if>
+          </div>
+        </div>
+      </sc-for>
+    </div>
+  </section>
+
+  <!-- ============ SUCURSALES ============ -->
+  <section id="sucursales" data-screen-label="Sucursales" style="scroll-margin-top:90px;max-width:1200px;margin:0 auto;padding:48px 20px 20px">
+    <div style="color:#E8192C;font-size:12px;font-weight:800;letter-spacing:.16em;text-transform:uppercase;margin-bottom:8px">Delivery y retiro</div>
+    <h2 style="margin:0 0 6px;font-size:clamp(28px,4vw,40px);font-weight:900;letter-spacing:-.02em">Sucursales</h2>
+    <p style="margin:0 0 22px;color:#9AA7B4;font-size:15px;max-width:70ch">Despachamos hasta <strong style="color:#F2F5F8">10 km a la redonda de cada sucursal</strong>. Escríbele directo a la más cercana o llama por teléfono.</p>
+    <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(250px,1fr));gap:14px">
+      <sc-for list="{{ sucursales }}" as="s" hint-placeholder-count="7">
+        <div style="background:#12161E;border:1px solid rgba(255,255,255,.07);border-radius:16px;padding:18px;display:flex;flex-direction:column;gap:6px;transition:border-color .18s" style-hover="border-color:rgba(41,171,226,.4)">
+          <div style="font-size:17px;font-weight:900">{{ s.comuna }}</div>
+          <div style="font-size:13.5px;color:#9AA7B4">{{ s.dir }}</div>
+          <div style="font-size:13.5px;color:#7FD4FA;font-weight:700">{{ s.fono }}</div>
+          <div style="display:flex;gap:8px;margin-top:10px;flex-wrap:wrap">
+            <a href="{{ s.wa }}" target="_blank" rel="noopener" style="flex:1;text-align:center;background:#25D366;color:#04240F;text-decoration:none;border-radius:10px;padding:9px 12px;font-size:13px;font-weight:800;transition:filter .15s" style-hover="filter:brightness(1.1)">WhatsApp</a>
+            <a href="{{ s.tel }}" style="flex:1;text-align:center;border:1px solid rgba(255,255,255,.18);color:#E7EEF4;text-decoration:none;border-radius:10px;padding:9px 12px;font-size:13px;font-weight:800;transition:background .15s" style-hover="background:rgba(255,255,255,.06)">Llamar</a>
+          </div>
+        </div>
+      </sc-for>
+    </div>
+  </section>
+
+  <!-- ============ CONTACTO / FOOTER ============ -->
+  <footer id="contacto" data-screen-label="Contacto" style="scroll-margin-top:90px;margin-top:56px;border-top:1px solid rgba(255,255,255,.07);background:#0D1016">
+    <div style="max-width:1200px;margin:0 auto;padding:40px 20px 28px;display:flex;flex-wrap:wrap;gap:32px;align-items:start">
+      <div style="flex:1 1 280px">
+        <img src="assets/logo.png" alt="CeleSushi Delivery" style="height:70px;display:block;margin-bottom:12px">
+        <p style="margin:0;color:#9AA7B4;font-size:14px;line-height:1.6;max-width:40ch">Sushi delivery con 7 sucursales en Santiago. Pide por WhatsApp y recibe en tu casa.</p>
+      </div>
+      <div style="flex:1 1 200px">
+        <div style="font-size:12px;font-weight:800;letter-spacing:.14em;text-transform:uppercase;color:#7FD4FA;margin-bottom:12px">Contacto</div>
+        <a href="mailto:celesushi@gmail.com" style="display:block;color:#C7D3DD;text-decoration:none;font-size:14px;padding:4px 0" style-hover="color:#29ABE2">celesushi@gmail.com</a>
+        <a href="https://www.instagram.com/celesushi.cl" target="_blank" rel="noopener" style="display:block;color:#C7D3DD;text-decoration:none;font-size:14px;padding:4px 0" style-hover="color:#29ABE2">Instagram · @celesushi.cl</a>
+        <a href="https://www.facebook.com/celesushi.cl" target="_blank" rel="noopener" style="display:block;color:#C7D3DD;text-decoration:none;font-size:14px;padding:4px 0" style-hover="color:#29ABE2">Facebook · CeleSushi</a>
+        <a href="https://www.tiktok.com/@cele_sushi" target="_blank" rel="noopener" style="display:block;color:#C7D3DD;text-decoration:none;font-size:14px;padding:4px 0" style-hover="color:#29ABE2">TikTok · @cele_sushi</a>
+      </div>
+      <div style="flex:1 1 200px">
+        <div style="font-size:12px;font-weight:800;letter-spacing:.14em;text-transform:uppercase;color:#7FD4FA;margin-bottom:12px">Secciones</div>
+        <a href="#promos" style="display:block;color:#C7D3DD;text-decoration:none;font-size:14px;padding:4px 0" style-hover="color:#29ABE2">Promociones</a>
+        <a href="#carta" style="display:block;color:#C7D3DD;text-decoration:none;font-size:14px;padding:4px 0" style-hover="color:#29ABE2">Carta</a>
+        <a href="#sucursales" style="display:block;color:#C7D3DD;text-decoration:none;font-size:14px;padding:4px 0" style-hover="color:#29ABE2">Sucursales</a>
+      </div>
+    </div>
+    <div style="border-top:1px solid rgba(255,255,255,.06)">
+      <div style="max-width:1200px;margin:0 auto;padding:16px 20px;display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap;color:#66727E;font-size:12.5px">
+        <span>© 2026 CeleSushi Delivery · Santiago de Chile</span>
+        <span>Fotos referenciales. Precios en pesos chilenos.</span>
+        <a href="https://luxchile.cl" target="_blank" rel="noopener" style="color:#66727E;text-decoration:none" style-hover="color:#29ABE2">Sitio creado por luxchile.cl</a>
+      </div>
+    </div>
+  </footer>
+
+  <!-- ============ FLOATING CART BAR ============ -->
+  <sc-if value="{{ showFloatBar }}" hint-placeholder-val="{{ false }}">
+    <button onClick="{{ openCart }}" style="position:fixed;left:50%;transform:translateX(-50%);bottom:18px;z-index:70;display:flex;align-items:center;gap:12px;background:#29ABE2;color:#062230;border:none;border-radius:999px;padding:14px 24px;font-family:'Archivo',sans-serif;font-size:15px;font-weight:900;cursor:pointer;box-shadow:0 12px 40px rgba(41,171,226,.35);transition:background .15s" style-hover="background:#4DC0F0">
+      <span style="background:#062230;color:#7FD4FA;border-radius:999px;min-width:24px;height:24px;display:grid;place-items:center;font-size:13px;padding:0 7px">{{ cartCount }}</span>
+      <span>Ver mi pedido</span>
+      <span>{{ total }}</span>
+    </button>
+  </sc-if>
+
+  <!-- ============ DRAWER PEDIDO ============ -->
+  <sc-if value="{{ open }}" hint-placeholder-val="{{ false }}">
+    <div data-screen-label="Pedido (drawer)" style="position:fixed;inset:0;z-index:100">
+      <div onClick="{{ closeCart }}" style="position:absolute;inset:0;background:rgba(4,6,10,.68);backdrop-filter:blur(3px)"></div>
+      <aside style="position:absolute;top:0;right:0;bottom:0;width:min(430px,100vw);background:#12161E;border-left:1px solid rgba(255,255,255,.09);display:flex;flex-direction:column;box-shadow:-24px 0 60px rgba(0,0,0,.5)">
+        <div style="display:flex;align-items:center;justify-content:space-between;padding:18px 20px;border-bottom:1px solid rgba(255,255,255,.07)">
+          <h3 style="margin:0;font-size:20px;font-weight:900">Mi pedido</h3>
+          <button onClick="{{ closeCart }}" style="width:36px;height:36px;border:1px solid rgba(255,255,255,.14);background:transparent;color:#C7D3DD;border-radius:50%;font-size:16px;cursor:pointer" style-hover="background:rgba(255,255,255,.07)">✕</button>
+        </div>
+        <div style="flex:1;overflow:auto;padding:16px 20px;display:flex;flex-direction:column;gap:10px">
+          <sc-if value="{{ cartEmpty }}" hint-placeholder-val="{{ true }}">
+            <div style="text-align:center;padding:40px 10px;color:#9AA7B4">
+              <div style="font-weight:800;color:#E7EEF4;font-size:16px;margin-bottom:6px">Tu pedido está vacío</div>
+              <div style="font-size:13.5px;line-height:1.5;margin-bottom:18px">Agrega promos o rolls de la carta y envíalos por WhatsApp.</div>
+              <button onClick="{{ goPromos }}" style="background:#29ABE2;color:#062230;border:none;border-radius:999px;padding:11px 22px;font-family:'Archivo',sans-serif;font-size:14px;font-weight:800;cursor:pointer" style-hover="background:#4DC0F0">Ver promociones</button>
+            </div>
+          </sc-if>
+          <sc-for list="{{ cartLines }}" as="l" hint-placeholder-count="2">
+            <div style="display:flex;align-items:center;gap:12px;background:#0B0D12;border:1px solid rgba(255,255,255,.07);border-radius:14px;padding:12px 14px">
+              <div style="flex:1;min-width:0">
+                <div style="font-size:14px;font-weight:800">{{ l.name }}</div>
+                <div style="font-size:12.5px;color:#9AA7B4;margin-top:2px">{{ l.unit }} c/u</div>
+              </div>
+              <div style="display:flex;align-items:center;gap:2px;background:#12161E;border:1px solid rgba(41,171,226,.45);border-radius:999px;padding:2px">
+                <button onClick="{{ l.onDec }}" style="width:26px;height:26px;border:none;background:transparent;color:#29ABE2;font-size:16px;font-weight:800;cursor:pointer;border-radius:50%" style-hover="background:rgba(41,171,226,.15)">−</button>
+                <span style="min-width:20px;text-align:center;font-weight:800;font-size:13px">{{ l.qty }}</span>
+                <button onClick="{{ l.onInc }}" style="width:26px;height:26px;border:none;background:transparent;color:#29ABE2;font-size:16px;font-weight:800;cursor:pointer;border-radius:50%" style-hover="background:rgba(41,171,226,.15)">+</button>
+              </div>
+              <div style="font-size:14px;font-weight:900;min-width:64px;text-align:right">{{ l.sub }}</div>
+            </div>
+          </sc-for>
+        </div>
+        <div style="padding:16px 20px 20px;border-top:1px solid rgba(255,255,255,.07);display:flex;flex-direction:column;gap:12px">
+          <label style="display:flex;flex-direction:column;gap:6px;font-size:12px;font-weight:800;letter-spacing:.1em;text-transform:uppercase;color:#7FD4FA">
+            Sucursal para tu pedido
+            <select value="{{ suc }}" onChange="{{ onSucChange }}" style="background:#0B0D12;color:#F2F5F8;border:1px solid rgba(255,255,255,.14);border-radius:10px;padding:11px 12px;font-family:'Archivo',sans-serif;font-size:14px;font-weight:600">
+              <sc-for list="{{ sucNames }}" as="sn" hint-placeholder-count="3">
+                <option value="{{ sn }}">{{ sn }}</option>
+              </sc-for>
+            </select>
+          </label>
+          <div style="display:flex;justify-content:space-between;align-items:center">
+            <span style="color:#9AA7B4;font-size:14px;font-weight:600">Total</span>
+            <span style="font-size:24px;font-weight:900">{{ total }}</span>
+          </div>
+          <sc-if value="{{ cartHasItems }}" hint-placeholder-val="{{ false }}">
+            <a href="{{ waOrderHref }}" target="_blank" rel="noopener" style="display:flex;align-items:center;justify-content:center;gap:10px;border-radius:12px;padding:15px 20px;font-size:15px;font-weight:900;text-decoration:none;background:#25D366;color:#04240F;cursor:pointer;transition:filter .15s" style-hover="filter:brightness(1.1)">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5.1-1.3A10 10 0 1 0 12 2zm0 18.2c-1.6 0-3.1-.4-4.4-1.2l-.3-.2-3 .8.8-2.9-.2-.3A8.2 8.2 0 1 1 12 20.2zm4.6-6.1c-.3-.1-1.5-.7-1.7-.8-.2-.1-.4-.1-.6.1-.2.3-.6.8-.8 1-.1.2-.3.2-.5.1a6.7 6.7 0 0 1-3.4-3c-.3-.4 0-.5.1-.7l.4-.5c.1-.2.1-.3.2-.5s0-.4 0-.5l-.8-1.9c-.2-.5-.4-.4-.6-.4h-.5c-.2 0-.5.1-.7.3-.2.3-.9.9-.9 2.2s.9 2.5 1.1 2.7c.1.2 1.9 2.9 4.6 4 .6.3 1.1.5 1.5.6.6.2 1.2.2 1.6.1.5-.1 1.5-.6 1.7-1.2.2-.6.2-1.1.2-1.2-.1-.1-.2-.2-.5-.3z"/></svg>
+              <span>Enviar pedido por WhatsApp</span>
+            </a>
+          </sc-if>
+          <sc-if value="{{ cartEmpty }}" hint-placeholder-val="{{ true }}">
+            <div style="display:flex;align-items:center;justify-content:center;gap:10px;border-radius:12px;padding:15px 20px;font-size:15px;font-weight:900;background:rgba(255,255,255,.08);color:#66727E">Agrega productos para pedir</div>
+          </sc-if>
+          <p style="margin:0;color:#66727E;font-size:12px;line-height:1.5;text-align:center">Se abrirá WhatsApp con el detalle de tu pedido. Coordina dirección y pago directo con la sucursal.</p>
+        </div>
+      </aside>
+    </div>
+  </sc-if>
+
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{
+  &quot;sucursalInicial&quot;: { &quot;editor&quot;: &quot;enum&quot;, &quot;default&quot;: &quot;La Cisterna&quot;, &quot;tsType&quot;: &quot;string&quot;, &quot;options&quot;: [&quot;La Cisterna&quot;, &quot;Providencia&quot;, &quot;Maipú&quot;, &quot;El Bosque&quot;, &quot;Pedro Aguirre Cerda&quot;, &quot;Ñuñoa&quot;, &quot;La Florida&quot;], &quot;section&quot;: &quot;Pedido&quot; },
+  &quot;mostrarFotosCarta&quot;: { &quot;editor&quot;: &quot;boolean&quot;, &quot;default&quot;: true, &quot;tsType&quot;: &quot;boolean&quot;, &quot;section&quot;: &quot;Carta&quot; }
+}">
+class Component extends DCLogic {
+  state = { cart: {}, tab: 'mixtas', cat: 'avocados', open: false, suc: null, heroIdx: 0 };
+
+  static HERO_SLIDES = [
+    { src: 'assets/food/p1-01.jpg', alt: 'Sushi burger', caption: 'Sushi Burgers' },
+    { src: 'assets/food/p1-06.jpg', alt: 'Promo 50 VIP', caption: 'Promo 50 VIP' },
+    { src: 'assets/food/p1-19.jpg', alt: 'Dúo Nikkei', caption: 'Dúo Nikkei' },
+    { src: 'assets/food/p2-06.jpg', alt: 'Gohan Mixto', caption: 'Gohan Mixto' },
+    { src: 'assets/food/p1-15.jpg', alt: '30 Premium', caption: '30 Premium' },
+  ];
+
+  static SUCURSALES = [
+    { comuna: 'La Cisterna',         dir: 'Gran Avenida #8010',       num: '56936505194', fono: '+56 9 3650 5194' },
+    { comuna: 'Providencia',         dir: 'Santa Isabel #219',        num: '56975103059', fono: '+56 9 7510 3059' },
+    { comuna: 'Maipú',               dir: 'Avenida Sur #918',         num: '56978314673', fono: '+56 9 7831 4673' },
+    { comuna: 'El Bosque',           dir: 'Observatorio #1062',       num: '56986395924', fono: '+56 9 8639 5924' },
+    { comuna: 'Pedro Aguirre Cerda', dir: 'Club Hípico #2707',        num: '56976779371', fono: '+56 9 7677 9371' },
+    { comuna: 'Ñuñoa',               dir: 'Azapa #3843 - Local 13',   num: '56940667283', fono: '+56 9 4066 7283' },
+    { comuna: 'La Florida',          dir: 'Av. Vicuña Mackena #9124', num: '56958297002', fono: '+56 9 5829 7002' },
+  ];
+
+  static PROMOS = [
+    { id:'promo-20', tab:'mixtas', name:'Promo 20', pzs:20, price:9000, img:'assets/food/p1-03.jpg', lines:['10 Fritas: Pollo apanado, queso','10 Env. en Palta: Camarón apanado, queso'] },
+    { id:'promo-30', tab:'mixtas', name:'Promo 30', pzs:30, price:12000, img:'assets/food/p1-04.jpg', lines:['10 Fritas: Pollo apanado, queso','10 Env. en Palta: Salmón, queso','10 Env. en Sésamo: Kanikama, queso, palta'] },
+    { id:'promo-40', tab:'mixtas', name:'Promo 40', pzs:40, price:14000, img:'assets/food/p1-05.jpg', lines:['10 Fritas: Pollo apanado, queso','10 Fritas: Kanikama, queso, cebollín','10 Env. en Palta: Camarón apanado, queso','10 Env. en Sésamo: Kanikama, queso, palta'] },
+    { id:'promo-50-vip', tab:'mixtas', name:'Promo 50 VIP', pzs:50, price:18000, img:'assets/food/p1-06.jpg', lines:['10 Fritas: Pollo apanado, queso','10 Fritas: Kanikama, queso, cebollín','10 Env. en Palta: Camarón, queso, palta','10 Env. en Queso: Pollo apanado, cebollín','10 Sésamo y Ciboulette: Camarón, queso, palta'] },
+    { id:'promo-60', tab:'mixtas', name:'Promo 60', pzs:60, price:21000, img:'assets/food/p1-07.jpg', lines:['10 Fritas: Pollo apanado, queso','10 Fritas: Kanikama, queso, cebollín','10 Env. en Palta: Salmón, queso','10 Env. en Sésamo: Camarón, queso, palta','10 Env. en Ciboulette: Palmito, queso, palta','10 Env. en Queso: Pollo apanado, cebollín'] },
+    { id:'promo-70', tab:'mixtas', name:'Promo 70', pzs:70, price:18500, img:'assets/food/p1-08.jpg', lines:['10 Fritas: Pollo apanado, queso','10 Fritas: Kanikama, queso, cebollín','10 Env. en Palta: Pollo apanado, queso, cebollín','10 Env. en Sésamo: Kanikama, queso, palta','10 Env. en Ciboulette: Palmito, queso, palta','10 Hosomaki: Queso, cebollín','10 Hosomaki Frito: Queso, cebollín'] },
+    { id:'promo-80', tab:'mixtas', name:'Promo 80', pzs:80, price:26500, img:'assets/food/p1-09.jpg', lines:['20 Fritas: Pollo apanado, queso','10 Fritas: Camarón, queso','10 Fritas: Kanikama, queso, cebollín','10 Env. en Salmón: Camarón, queso','10 Env. en Sésamo: Kanikama, queso, palta','10 Env. en Palta: Camarón apanado, queso','10 Env. en Queso: Pollo apanado, cebollín'] },
+    { id:'promo-120', tab:'mixtas', name:'Promo 120', pzs:120, price:35500, img:'assets/food/p1-10.jpg', lines:['20 Fritas: Pollo apanado, queso','20 Fritas: Camarón, queso, cebollín','20 Fritas: Kanikama, queso, cebollín','10 Env. en Ciboulette: Palmito, queso, palta','10 Env. en Palta: Salmón, queso','10 Env. en Palta: Camarón apanado, queso','10 Env. en Salmón: Camarón apanado, queso','10 Env. en Queso: Pollo apanado, cebollín','10 Env. en Sésamo: Kanikama, queso, palta'] },
+    { id:'hot-20', tab:'hot', name:'Promo Hot 20', pzs:20, price:9500, img:'assets/food/p1-11.jpg', lines:['10 Fritas: Pollo apanado, queso','10 Fritas: Camarón, cebollín y queso'] },
+    { id:'hot-30', tab:'hot', name:'Promo Hot 30', pzs:30, price:13000, img:'assets/food/p1-12.jpg', lines:['10 Fritas: Pollo, queso','10 Fritas: Kanikama, queso, cebollín','10 Fritas: Salmón, queso'] },
+    { id:'hot-40', tab:'hot', name:'Promo Hot 40', pzs:40, price:17000, img:'assets/food/p1-13.jpg', lines:['10 Fritas: Pollo apanado, queso','10 Fritas: Kanikama, queso, cebollín','10 Fritas: Palmito, queso, cebollín','10 Fritas: Camarón, queso, cebollín'] },
+    { id:'hot-50', tab:'hot', name:'Promo Hot 50', pzs:50, price:20000, img:'assets/food/p1-14.jpg', lines:['10 Fritas: Pollo apanado, queso','10 Fritas: Kanikama, queso, cebollín','10 Fritas: Salmón, queso','10 Fritas: Palmito, queso, cebollín','10 Fritas: Camarón, queso, cebollín'] },
+    { id:'30-premium', tab:'nikkei', name:'30 Premium', pzs:30, price:14500, img:'assets/food/p1-15.jpg', lines:['10 Fritas: Pollo apanado, queso','10 Relleno camarón apanado. Bañado en salsa huancaína con topping','10 Env. en Palta: Camarón, queso, palta. Bañado de salsa acevichada con topping'] },
+    { id:'duo-nikkei', tab:'nikkei', name:'Dúo Nikkei', pzs:20, price:14000, img:'assets/food/p1-19.jpg', lines:['10 Env. en Palta: Pollo apanado, palta. Bañado en salsa olivo, coronado de pulpo y papa hilo','10 Fritas: Camarón apanado, queso, coronado de ceviche'] },
+    { id:'tri-nikkei', tab:'nikkei', name:'Tri Nikkei', pzs:30, price:19000, img:'assets/food/p1-16.jpg', lines:['10 Env. en Palta: Pollo apanado, palta. Salsa olivo, pulpo y papa hilo','10 Relleno camarón apanado, palta. Coronado de ceviche mixto','10 Env. en Palta: Camarón apanado. Coronado de tartar de kanikama'] },
+    { id:'4-nikkei', tab:'nikkei', name:'4 Nikkei', pzs:40, price:22000, img:'assets/food/p1-20.jpg', lines:['10 Fritas de Nori Apanado: Champiñón apanado, palmito, cebollín. Salsa spicy, wantan al hilo','10 Env. en Palta (sin arroz): Champiñón apanado, pepino, palta. Camote al hilo','10 Env. en Palta: Camarón apanado, palta. Tártaro de camarón flameado','10 Fritas: Camarón apanado, queso, coronado de ceviche'] },
+  ];
+
+  static ITEM_IMGS = {
+    'av-angel':0,'av-avocado':1,'av-ebi':2,'av-katzu':3,'av-palmito':4,'av-shitake':5,'av-tako':6,'av-tempura':7,'av-tuna':8,
+    'ca-ebi':9,'ca-sake':10,'ca-katzu':11,'ca-light':12,'ca-ebi-sake':13,'ca-tako':14,'ca-veggie':15,
+    'fr-elmer':16,'fr-mary':17,'fr-salmon':18,'fr-vegel':19,'fr-panko-tori':20,'fr-panko-sake':21,'fr-tako':22,'fr-panko':23,
+    'sa-avocado-tuna':24,'sa-avocado':25,'sa-betarraga':26,'sa-omar':27,'sa-veggie':28,'sa-zani':29,'sa-yuri':30,'sa-tori':31,'sa-sake':32,
+    'pr-chesse-sake':33,'pr-chesse-teri':34,'pr-chesse-minon':35,'pr-chesse-ebi':36,'pr-betarraga':37,'pr-mango':38,'pr-peru':39,'pr-thiago':40,'pr-taki':41,'pr-beef':42,'pr-tako-grill':43,'pr-imperio':44,
+    'sk-tako':45,'sk-ebi':46,'sk-sake':47,'sk-ebi-tempura':48,'sk-fanny':49,'sk-tempura':50,'sk-tori':51,'sk-tuna':52,
+    'nk-acevichado':53,'nk-cele':54,'nk-ceviche':55,'nk-ceviche-furai':56,'nk-gratinado':57,'nk-huancaina':58,'nk-lima':59,'nk-lomo':60,'nk-maguro-ebi':61,'nk-karen':62,'nk-maracuya':63,'nk-panko-shitake':64,'nk-olivo':65,'nk-maguro':66,'nk-xander':67,
+    'ng-maguro':68,'ng-sake':69,'ng-tako':70,'ng-ebi':71,
+    'ss-mixto':72,
+    'hs-ebi':73,'hs-fresh':74,'hs-hazu':75,'hs-maguro':76,'hs-sake':77,'hs-tako':78,
+  };
+
+  static CARTA = [
+    { id:'avocados', label:'Rolls Avocados', note:'Rolls envueltos en palta.', items:[
+      { id:'av-katzu', name:'Katzu', desc:'Pollo apanado, queso, palta', price:5600 },
+      { id:'av-ebi', name:'Ebi', desc:'Camarón, queso, palta', price:5300 },
+      { id:'av-angel', name:'Ángel', desc:'Salmón, camarón, queso', price:5800 },
+      { id:'av-avocado', name:'Avocado', desc:'Salmón, queso, palta', price:5300 },
+      { id:'av-tuna', name:'Tuna', desc:'Atún, queso, cebollín', price:5600 },
+      { id:'av-tempura', name:'Tempura', desc:'Camarón apanado, queso, palta', price:5600 },
+      { id:'av-shitake', name:'Shitake', desc:'Champiñón apanado, queso, salsa spicy', price:4800 },
+      { id:'av-tako', name:'Tako', desc:'Pulpo, queso, palta', price:5800 },
+      { id:'av-palmito', name:'Palmito', desc:'Palmito, queso, cebollín', price:4800 },
+    ]},
+    { id:'california', label:'Rolls California', note:'Los clásicos de siempre.', items:[
+      { id:'ca-ebi', name:'California Ebi', desc:'Camarón, queso, palta', price:4300 },
+      { id:'ca-sake', name:'California Sake', desc:'Salmón, palta', price:4500 },
+      { id:'ca-ebi-sake', name:'California Ebi Sake', desc:'Camarón, salmón, queso', price:4800 },
+      { id:'ca-katzu', name:'California Katzu', desc:'Pollo apanado, palta', price:4300 },
+      { id:'ca-tako', name:'California Tako', desc:'Pulpo, queso, palta', price:4700 },
+      { id:'ca-veggie', name:'California Veggie', desc:'Palmito, palta', price:3800 },
+      { id:'ca-light', name:'California Light', desc:'Champiñón, queso, cebollín', price:3800 },
+    ]},
+    { id:'fritos', label:'Rolls Fritos', note:'Apanados y crujientes.', items:[
+      { id:'fr-panko', name:'Panko', desc:'Camarón, queso, cebollín', price:5300 },
+      { id:'fr-vegel', name:'Panko Vegel', desc:'Palta, pepino, cebollín, queso', price:4800 },
+      { id:'fr-tori', name:'Tori', desc:'Camarón, queso, cebollín. Env. en pollo apanado', price:5600 },
+      { id:'fr-panko-tori', name:'Panko Tori', desc:'Pollo apanado, queso, cebollín', price:5300 },
+      { id:'fr-panko-sake', name:'Panko Sake', desc:'Camarón, queso, cebollín. Env. en salmón apanado', price:5500 },
+      { id:'fr-elmer', name:'Elmer', desc:'Salmón, queso, cebollín', price:5600 },
+      { id:'fr-tako', name:'Tako Especial', desc:'Pulpo, queso, cebollín', price:5300 },
+      { id:'fr-salmon', name:'Salmón', desc:'Salmón, palta, cebollín. Env. en salmón apanado', price:6200 },
+      { id:'fr-mary', name:'Mary', desc:'Salmón, camarón, queso', price:5800 },
+    ]},
+    { id:'sake', label:'Rolls Sake', note:'Envueltos en salmón.', items:[
+      { id:'sk-ebi', name:'Sake Ebi', desc:'Camarón, queso, palta', price:5700 },
+      { id:'sk-ebi-tempura', name:'Sake Ebi Tempura', desc:'Camarón apanado, queso, palta', price:6000 },
+      { id:'sk-fanny', name:'Sake Fanny', desc:'Salmón, queso, cebollín, palta', price:6000 },
+      { id:'sk-sake', name:'Sake', desc:'Salmón, queso, cebollín', price:5800 },
+      { id:'sk-tori', name:'Sake Tori', desc:'Pollo apanado, queso, palta', price:5300 },
+      { id:'sk-tako', name:'Sake Tako', desc:'Pulpo, queso, palta', price:5300 },
+      { id:'sk-tuna', name:'Sake Tuna', desc:'Atún, queso, cebollín', price:6000 },
+      { id:'sk-tempura', name:'Sake Tempura', desc:'Champiñón apanado, queso, cebollín', price:4700 },
+    ]},
+    { id:'sinarroz', label:'Rolls Sin Arroz', note:'Orientales, sin arroz.', items:[
+      { id:'sa-avocado', name:'Avocado Oriental', desc:'Camarón apanado, salmón, queso. Salsa acevichada, coronado con topping camote', price:7500 },
+      { id:'sa-avocado-tuna', name:'Avocado Tuna Oriental', desc:'Env. en Palta: Camarón apanado, atún, queso', price:7000 },
+      { id:'sa-betarraga', name:'Betarraga Oriental', desc:'Env. en Betarraga: Champiñón apanado, palmito, queso y palta', price:7000 },
+      { id:'sa-omar', name:'Omar Oriental', desc:'Env. en Salmón Apanado: Salmón, queso, cebollín, tortilla de huevo', price:7000 },
+      { id:'sa-veggie', name:'Oriental Veggie', desc:'Env. en Palta: Champiñón apanado, palta, pepino', price:7000 },
+      { id:'sa-sake', name:'Sake Oriental', desc:'Camarón apanado, queso, palta. Env. en salmón', price:7500 },
+      { id:'sa-tori', name:'Tori Oriental', desc:'Pollo apanado, palta, cebollín. Env. en queso', price:7000 },
+      { id:'sa-yuri', name:'Yuri Oriental', desc:'Atún, salsa spicy, queso, ciboulette. Env. en tortilla de huevo apanado', price:7000 },
+      { id:'sa-zani', name:'Zani Oriental', desc:'Palta, palmito, cebollín. Env. en zanahoria', price:7000 },
+    ]},
+    { id:'premium', label:'Rolls Premium', note:'Envolturas y toppings especiales.', items:[
+      { id:'pr-chesse-ebi', name:'Chesse Ebi', desc:'Camarón, palta', price:5500 },
+      { id:'pr-chesse-sake', name:'Chesse Sake', desc:'Salmón, palta', price:5800 },
+      { id:'pr-chesse-teri', name:'Chesse Teri', desc:'Pollo apanado, palta, cebollín', price:5500 },
+      { id:'pr-chesse-minon', name:'Chesse Miñon', desc:'Champiñón tempura, cebollín, palta', price:5000 },
+      { id:'pr-betarraga', name:'Betarraga', desc:'Env. en Betarraga: Zanahoria, pimentón, queso. Coronado con topping de papa hilo', price:5000 },
+      { id:'pr-peru', name:'Perú', desc:'Env. en Salmón: Camarón apanado, queso, palta. Coronado con limón de pica', price:6000 },
+      { id:'pr-mango', name:'Mango', desc:'Env. en Mango: Camarón apanado, queso. Bañado en salsa maracuyá y topping de wantan', price:6500 },
+      { id:'pr-thiago', name:'Thiago', desc:'Env. en Plátano: Salmón, queso, cebollín. Bañado en salsa maracuyá', price:6000 },
+      { id:'pr-taki', name:'Taki', desc:'Env. en Palta: Camarón apanado, palta. Coronado con tártaro de camarón flameado', price:5500 },
+      { id:'pr-imperio', name:'Imperio Roll', desc:'Envuelto en salmón, relleno con camarón apanado y palta. Coronado con chimichurri de la casa', price:7000 },
+      { id:'pr-beef', name:'Beef Rolls', desc:'Envuelto en lomo flameado, relleno con camarón apanado y palta. Coronado con chimichurri de la casa', price:7000 },
+      { id:'pr-tako-grill', name:'Tako Grill Roll', desc:'Envuelto en queso, relleno con camarón apanado y palta. Coronado con pulpo a la parrilla y chimichurri', price:7000 },
+    ]},
+    { id:'nikkei', label:'Rolls Nikkei', note:'Fusión peruano-japonesa.', items:[
+      { id:'nk-cele', name:'Cele', desc:'Camarón apanado, queso, palta, bañado en salsa acevichada con topping', price:7000, img:'assets/food/p1-23.jpg' },
+      { id:'nk-acevichado', name:'Acevichado', desc:'Camarón, palta, queso. Coronado de pescado blanco, bañado de salsa acevichada', price:7000, img:'assets/food/p1-22.jpg' },
+      { id:'nk-ceviche-furai', name:'Ceviche Furai', desc:'Frito: Camarón apanado, queso. Coronado con ceviche', price:7500 },
+      { id:'nk-ceviche', name:'Ceviche', desc:'Camarón apanado, palta. Coronado de ceviche mixto', price:7500 },
+      { id:'nk-gratinado', name:'Gratinado Furai', desc:'Champiñón apanado, palmito, cebollín. Nori apanado con salsa spicy, wantan al hilo', price:7500 },
+      { id:'nk-huancaina', name:'Huancaína', desc:'Env. en Salmón: Camarón, queso. Bañado con salsa huancaína, topping de papa hilo', price:7000 },
+      { id:'nk-karen', name:'Karen', desc:'Env. en Palta: Camarón apanado, palta. Coronado con tartar de kanikama', price:7000 },
+      { id:'nk-lima', name:'Lima', desc:'Env. en Palta: Queso, palta. Coronado de camarón apanado, bañado en salsa acevichada', price:7000 },
+      { id:'nk-lomo', name:'Lomo', desc:'Palta, queso, ciboulette. Coronado de Lomo Saltado', price:7000, img:'assets/food/p1-21.jpg' },
+      { id:'nk-maguro', name:'Maguro', desc:'Env. en Atún: Camarón apanado, queso, cebollín. Bañado en salsa acevichada', price:7000 },
+      { id:'nk-maguro-ebi', name:'Maguro Ebi Sake', desc:'Env. en Palta, salmón y atún. Camarón apanado, queso. Con salsa acevichada', price:7500 },
+      { id:'nk-maracuya', name:'Maracuyá', desc:'Env. en Salmón: Camarón apanado, queso. Bañado en salsa maracuyá, wantan al hilo', price:7000 },
+      { id:'nk-olivo', name:'Olivo', desc:'Env. en Palta: Pollo apanado, palta. Bañado en salsa olivo con topping', price:7500, img:'assets/food/p1-19.jpg' },
+      { id:'nk-panko-shitake', name:'Panko Shitake', desc:'Frito: Pollo apanado, champiñón apanado, queso. Papa hilo con salsa tari y teriyaki', price:7500 },
+      { id:'nk-xander', name:'Xander', desc:'Env. en Palta y Plátano: Queso, camarón tempura, tocino', price:7500 },
+    ]},
+    { id:'burgers', label:'Sushi Burgers', note:'Pan de arroz crujiente.', items:[
+      { id:'bg-sake', name:'Sake Burger', desc:'Salmón, queso, palta', price:8000, img:'assets/food/p2-00.jpg' },
+      { id:'bg-katzu', name:'Katzu Burger', desc:'Pollo apanado, queso, palta', price:7000, img:'assets/food/p2-03.jpg' },
+      { id:'bg-ebi', name:'Ebi Burger', desc:'Camarón apanado, queso, palta', price:7000, img:'assets/food/p2-01.jpg' },
+      { id:'bg-tradicional', name:'Tradicional Burger', desc:'Pollo apanado, queso, palta, cebollín', price:7000, img:'assets/food/p2-02.jpg' },
+      { id:'bg-veggie', name:'Veggie Burger', desc:'Palta, queso, champiñón', price:7000, img:'assets/food/p2-04.jpg' },
+      { id:'bg-arma', name:'Arma tu Burger', desc:'4 ingredientes a elección', price:9000 },
+    ]},
+    { id:'clasicos', label:'Niguiris · Sashimi · Hosomakis', note:'Cortes y bocados clásicos.', items:[
+      { id:'ng-ebi', name:'Niguiri Ebi', desc:'Bolitas de arroz cubiertas de camarón', price:2500 },
+      { id:'ng-maguro', name:'Niguiri Maguro', desc:'Bolitas de arroz cubiertas de atún', price:2700 },
+      { id:'ng-tako', name:'Niguiri Tako', desc:'Bolitas de arroz cubiertas de pulpo', price:2700 },
+      { id:'ng-sake', name:'Niguiri Sake', desc:'Bolitas de arroz cubiertas de salmón', price:3000 },
+      { id:'ss-mixto', name:'Sashimi Mixto', desc:'9 cortes', price:10500 },
+      { id:'ss-pulpo', name:'Sashimi Pulpo', desc:'9 cortes', price:10500 },
+      { id:'ss-salmon', name:'Sashimi Salmón', desc:'9 cortes', price:11000 },
+      { id:'hs-hazu', name:'Hosomaki Hazu', desc:'Kanikama, queso · 6 cortes', price:2800 },
+      { id:'hs-ebi', name:'Hosomaki Ebi', desc:'Camarón, queso · 6 cortes', price:3300 },
+      { id:'hs-fresh', name:'Hosomaki Fresh', desc:'Pepino, palta · 6 cortes', price:3500 },
+      { id:'hs-maguro', name:'Hosomaki Maguro', desc:'Atún, palta · 6 cortes', price:3500 },
+      { id:'hs-sake', name:'Hosomaki Sake', desc:'Salmón, queso · 6 cortes', price:3500 },
+      { id:'hs-tako', name:'Hosomaki Tako', desc:'Pulpo, palta · 6 cortes', price:3500 },
+    ]},
+    { id:'entradas', label:'Entradas', note:'Para empezar.', items:[
+      { id:'en-gyosa-cam', name:'Gyosas Camarón', desc:'5 unidades', price:4000, img:'assets/food/p2-05.jpg' },
+      { id:'en-gyosa-cerdo', name:'Gyosas Cerdo', desc:'5 unidades', price:3800 },
+      { id:'en-gyosa-pollo', name:'Gyosas Pollo', desc:'5 unidades', price:3500 },
+      { id:'en-arrollado-jq', name:'Arrollado Jamón Queso', desc:'5 unidades', price:4000 },
+      { id:'en-arrollado-pr', name:'Arrollado Primavera', desc:'5 unidades', price:3500 },
+    ]},
+    { id:'gohan', label:'Gohan', note:'Bowls de arroz con topping.', items:[
+      { id:'go-mixto', name:'Gohan Mixto', desc:'Salmón, camarón, pulpo, palta, salsa spicy', price:8000, img:'assets/food/p2-06.jpg' },
+      { id:'go-ebi', name:'Gohan Ebi Furai', desc:'Camarón apanado, queso, cebollín, palta', price:7000, img:'assets/food/p2-08.jpg' },
+      { id:'go-tori', name:'Gohan Tori', desc:'Pollo apanado, queso, cebollín, palta', price:7000, img:'assets/food/p2-07.jpg' },
+      { id:'go-acevichado', name:'Gohan Acevichado', desc:'Ceviche, camarón apanado, palta', price:8500, img:'assets/food/p2-09.jpg' },
+    ]},
+  ];
+
+  componentDidMount() {
+    this._heroTimer = setInterval(() => {
+      this.setState(s => {
+        const heroIdx = (s.heroIdx + 1) % Component.HERO_SLIDES.length;
+        document.querySelectorAll('[data-hero-slide]').forEach(el => {
+          el.style.opacity = +el.getAttribute('data-hero-slide') === heroIdx ? '1' : '0';
+        });
+        document.querySelectorAll('[data-hero-dot]').forEach(el => {
+          el.style.background = +el.getAttribute('data-hero-dot') === heroIdx ? '#29ABE2' : 'rgba(255,255,255,.35)';
+        });
+        return { heroIdx };
+      });
+    }, 4000);
+    try {
+      const saved = JSON.parse(localStorage.getItem('celesushi-pedido') || 'null');
+      if (saved && typeof saved === 'object') this.setState({ cart: saved.cart || {}, suc: saved.suc || null });
+    } catch (e) {}
+  }
+
+  componentWillUnmount() {
+    if (this._heroTimer) clearInterval(this._heroTimer);
+  }
+
+  persist(next) {
+    try {
+      localStorage.setItem('celesushi-pedido', JSON.stringify({
+        cart: next.cart !== undefined ? next.cart : this.state.cart,
+        suc: next.suc !== undefined ? next.suc : this.state.suc,
+      }));
+    } catch (e) {}
+  }
+
+  allProducts() {
+    const map = {};
+    Component.PROMOS.forEach(p => { map[p.id] = { name: p.name, price: p.price }; });
+    Component.CARTA.forEach(c => c.items.forEach(i => { map[i.id] = { name: i.name, price: i.price, cat: c.label }; }));
+    return map;
+  }
+
+  clp(n) { return '$' + n.toLocaleString('es-CL'); }
+
+  changeQty(id, delta) {
+    this.setState(s => {
+      const cart = { ...s.cart };
+      const q = (cart[id] || 0) + delta;
+      if (q <= 0) delete cart[id]; else cart[id] = q;
+      this.persist({ cart });
+      return { cart };
+    });
+  }
+
+  renderVals() {
+    const s = this.state;
+    const products = this.allProducts();
+    const cartIds = Object.keys(s.cart);
+    const cartCount = cartIds.reduce((a, id) => a + s.cart[id], 0);
+    const totalN = cartIds.reduce((a, id) => a + s.cart[id] * (products[id] ? products[id].price : 0), 0);
+
+    const promoTabs = [
+      { key: 'mixtas', label: 'Promos Mixtas' },
+      { key: 'hot', label: 'Promos Hot' },
+      { key: 'nikkei', label: 'Promos Nikkei' },
+    ].map(t => ({
+      label: t.label,
+      active: s.tab === t.key,
+      inactive: s.tab !== t.key,
+      onClick: () => this.setState({ tab: t.key }),
+    }));
+
+    const promos = Component.PROMOS.filter(p => p.tab === s.tab).map(p => {
+      const qty = s.cart[p.id] || 0;
+      return {
+        name: p.name, img: p.img, lines: p.lines,
+        pzsLabel: p.pzs + ' piezas',
+        price: this.clp(p.price),
+        qty, inCart: qty > 0, notInCart: qty === 0,
+        onInc: () => this.changeQty(p.id, 1),
+        onDec: () => this.changeQty(p.id, -1),
+      };
+    });
+
+    const showFotos = this.props.mostrarFotosCarta ?? true;
+    const activeCat = Component.CARTA.find(c => c.id === s.cat) || Component.CARTA[0];
+    const cats = Component.CARTA.map(c => ({
+      label: c.label,
+      active: c.id === activeCat.id,
+      inactive: c.id !== activeCat.id,
+      onClick: () => this.setState({ cat: c.id }),
+    }));
+    const items = activeCat.items.map(i => {
+      const qty = s.cart[i.id] || 0;
+      const ri = Component.ITEM_IMGS[i.id];
+      const img = ri !== undefined ? ('assets/food/r' + String(ri).padStart(2, '0') + '.jpg') : (i.img || '');
+      return {
+        name: i.name, desc: i.desc,
+        price: this.clp(i.price),
+        img, showImg: !!img && showFotos,
+        qty, inCart: qty > 0, notInCart: qty === 0,
+        onInc: () => this.changeQty(i.id, 1),
+        onDec: () => this.changeQty(i.id, -1),
+      };
+    });
+
+    const sucursales = Component.SUCURSALES.map(x => ({
+      comuna: x.comuna, dir: x.dir, fono: x.fono,
+      wa: 'https://wa.me/' + x.num + '?text=' + encodeURIComponent('Hola CeleSushi ' + x.comuna + '! Quiero hacer un pedido.'),
+      tel: 'tel:+' + x.num,
+    }));
+
+    const sucSel = s.suc || (this.props.sucursalInicial ?? Component.SUCURSALES[0].comuna);
+    const sucObj = Component.SUCURSALES.find(x => x.comuna === sucSel) || Component.SUCURSALES[0];
+
+    const cartLines = cartIds.map(id => {
+      const p = products[id] || { name: id, price: 0 };
+      return {
+        name: p.name,
+        unit: this.clp(p.price),
+        qty: s.cart[id],
+        sub: this.clp(p.price * s.cart[id]),
+        onInc: () => this.changeQty(id, 1),
+        onDec: () => this.changeQty(id, -1),
+      };
+    });
+
+    let msg = 'Hola CeleSushi ' + sucObj.comuna + '! Quiero hacer este pedido:\n';
+    cartIds.forEach(id => {
+      const p = products[id];
+      if (p) msg += '\n• ' + s.cart[id] + '× ' + p.name + ' — ' + this.clp(p.price * s.cart[id]);
+    });
+    msg += '\n\nTotal: ' + this.clp(totalN) + '\n\nMi dirección es: ';
+    const hasItems = cartCount > 0;
+
+    const heroLayer = React.createElement(React.Fragment, null,
+      Component.HERO_SLIDES.map((h, i) => React.createElement('img', {
+        key: h.src, src: h.src, alt: h.alt, loading: 'lazy',
+        style: { position: 'absolute', inset: 0, width: '100%', height: '100%', objectFit: 'cover', transition: 'opacity 1s ease', opacity: i === s.heroIdx ? 1 : 0 },
+      }))
+    );
+    const heroDotsLayer = React.createElement('div',
+      { style: { position: 'absolute', right: 16, bottom: 16, display: 'flex', gap: 6 } },
+      Component.HERO_SLIDES.map((h, i) => React.createElement('span', {
+        key: i,
+        style: { width: 7, height: 7, borderRadius: '50%', transition: 'background .4s', background: i === s.heroIdx ? '#29ABE2' : 'rgba(255,255,255,.35)' },
+      }))
+    );
+
+    return {
+      heroLayer, heroDotsLayer,
+      heroCaption: Component.HERO_SLIDES[s.heroIdx].caption,
+      cartCount, open: s.open,
+      total: this.clp(totalN),
+      openCart: () => this.setState({ open: true }),
+      closeCart: () => this.setState({ open: false }),
+      goPromos: () => { this.setState({ open: false }); const el = document.getElementById('promos'); if (el) { const y = el.getBoundingClientRect().top + window.scrollY - 80; window.scrollTo({ top: y, behavior: 'smooth' }); } },
+      promoTabs, promos,
+      cats, items, catNote: activeCat.note,
+      sucursales,
+      sucNames: Component.SUCURSALES.map(x => x.comuna),
+      suc: sucSel,
+      onSucChange: (e) => { const v = e.target.value; this.setState({ suc: v }); this.persist({ suc: v }); },
+      cartLines,
+      cartEmpty: !hasItems,
+      cartHasItems: hasItems,
+      showFloatBar: hasItems && !s.open,
+      waOrderHref: hasItems ? 'https://wa.me/' + sucObj.num + '?text=' + encodeURIComponent(msg) : undefined,
+    };
+  }
+}
+</script>
+</body>
+</html>

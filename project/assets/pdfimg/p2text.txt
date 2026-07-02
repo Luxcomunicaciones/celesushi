@@ -1,0 +1,389 @@
+357,795,8|AVOCADO TUNA ORIENTAL
+533,858,8|Env. en Palta: Champiñón
+533,847,8|apanado, palta, pepino
+532,802,7|Camarón apanado, queso,
+532,792,7|palta. Env. en salmón
+533,688,7|Atún, salsa spicy, queso,
+533,678,7|ciboulette. Env. en tortilla
+533,668,7|de huevo apanado
+697,906,34|ROLLS
+807,903,37|SAKE
+351,132,36|NIGUIRIS
+350,112,9|BOLITAS DE ARROZ CUBIERTAS DE PROTEÍNA
+1198,858,7|Camarón apanado,
+1198,848,7|queso, palta
+1032,754,7|Champiñon, palmito,
+1032,744,7|choclo o palta, queso
+26,895,34|ROLLS
+136,898,37|AVOCADOS
+27,694,8|KATZU
+28,678,8|Pollo apanado, queso, palta
+29,663,8|$5.600
+28,754,8|EBI
+27,739,8|Camarón, queso, palta
+28,725,8|$5.300
+28,862,8|ÁNGEL
+27,845,8|Salmón, camarón, queso
+28,831,8|$5.800
+27,794,8|Salmón, queso, palta
+27,779,8|$5.300
+27,809,8|AVOCADO
+176,657,8|Atún, queso, cebollín
+178,640,8|$5.600
+176,674,8|TUNA
+176,734,8|TEMPURA
+176,717,8|Camarón apanado,
+176,705,8|queso, palta
+176,692,8|$5.600
+176,862,8|SHITAKE
+176,846,8|Champiñón apanado, queso,
+176,835,8|salsa spicy
+176,818,8|$4.800
+176,790,8|TAKO
+176,774,8|Pulpo, queso, palta
+177,750,8|$5.800
+27,638,8|PALMITO
+27,622,8|Palmito, queso, cebollín
+28,609,8|$4.800
+28,572,35|ROLLS
+139,574,38|CALIFORNIA
+30,317,34|ROLLS
+140,319,37|FRITOS
+30,535,8|CALIFORNIA EBI
+30,520,8|Camarón, queso, palta
+31,506,8|$4.300
+185,535,8|CALIFORNIA SAKE
+185,519,8|Salmón, palta
+186,506,8|$4.500
+30,487,8|CALIFORNIA EBI SAKE
+30,471,8|Camarón, salmón, queso
+31,459,8|$4.800
+32,425,8|Pollo apanado, palta
+33,411,8|$4.300
+30,438,8|CALIFORNIA KATZU
+187,465,8|Pulpo, queso, palta
+186,451,8|$4.700
+185,481,8|CALIFORNIA TAKO
+185,425,8|CALIFORNIA VEGGIE
+186,409,8|Palmito, palta
+188,396,8|$3.800
+30,389,8|CALIFORNIA LIGHT
+30,373,8|Champiñón, queso, cebollín
+30,360,8|$3.800
+29,174,9|PANKO
+29,158,9|Camarón, queso, cebollín
+30,144,9|$5.300
+28,54,9|PANKO VEGEL
+28,37,9|Palta, pepino, cebollin, queso
+29,24,9|$4.800
+183,105,9|TORI
+183,87,9|Camarón, queso, cebollín.
+183,76,9|Env. en pollo apanado
+183,59,9|$5.600
+183,257,9|Pollo apanado, queso, cebollín
+183,242,9|$5.300
+184,272,9|PANKO TORI
+29,106,9|Camarón, queso, cebollín.
+29,94,9|Env. en salmón apanado
+30,75,9|$5.500
+30,125,9|PANKO SAKE
+29,277,9|ELMER
+28,262,9|Salmón, queso, cebollín
+28,247,9|$5.600
+183,154,9|TAKO ESPECIAL
+183,137,9|Pulpo, queso, cebollín
+183,123,9|$5.300
+183,218,9|SALMÓN
+183,201,9|Salmón, palta, cebollín.
+183,189,9|Env. en salmón apanado
+183,172,9|$6.200
+29,226,9|MARY
+29,208,9|Salmón, camarón, queso
+29,195,9|$5.800
+361,897,34|ROLLS
+471,899,37|SIN ARROZ
+358,558,34|ROLLS
+469,558,37|PREMIUM
+357,665,8|OMAR ORIENTAL
+357,649,8|Env. en Salmón Apanado:
+357,639,8|Salmón, queso, cebollín,
+357,629,8|tortilla de huevo
+358,617,8|$7.000
+357,859,8|Camarón apanado, salmón,
+357,848,8|queso. Bañado en salsa
+357,838,8|acevichada, coronado con
+357,827,8|topping camote
+358,813,8|$7.500
+357,872,8|AVOCADO ORIENTAL
+358,779,8|Env. en Palta: Camarón
+358,769,8|apanado, atún, queso
+359,754,8|$7.000
+358,738,8|BETARRAGA ORIENTAL
+358,721,8|Env. en Betarraga:
+358,710,8|Champiñón apanado,
+358,700,8|palmito, queso y palta
+358,685,8|$7.000
+532,831,8|$7.000
+533,873,8|ORIENTAL VEGGIE
+532,816,7|SAKE ORIENTAL
+532,777,7|$7.500
+534,637,7|ZANI ORIENTAL
+532,621,7|Palta, palmito, cebollín.
+532,611,7|Env. en zanahoria
+533,594,7|$7.000
+532,703,7|YURI ORIENTAL
+533,653,7|$7.000
+532,760,7|TORI ORIENTAL
+532,745,7|Pollo apanado, palta,
+532,735,7|cebollín. Env. en queso
+532,721,7|$7.000
+517,462,7|CHESSE EBI
+518,450,7|Camarón, palta
+517,439,7|$5.500
+517,330,8|CHESSE MIÑON
+517,318,8|Champiñón tempura,
+517,308,8|cebollín, palta
+518,297,8|$5.000
+517,413,8|Salmón, palta
+517,401,8|$5.800
+517,422,8|CHESSE SAKE
+517,372,7|Pollo apanado, palta,
+517,362,7|cebollín
+518,351,7|$5.500
+517,384,7|CHESSE TERI
+517,532,7|BETARRAGA
+517,522,7|Env. en Betarraga:
+517,512,7|Zanahoria, pimentón,
+517,501,7|queso. Coronado con
+517,491,7|topping de papa hilo
+518,478,7|$5.000
+517,205,8|PERÚ
+517,192,8|Env. en Salmón: Camarón
+517,182,8|apanado, queso, palta.
+517,171,8|Coronado con limón de pica
+518,159,8|$6.000
+517,277,8|MANGO
+517,264,8|Env. en Mango: Camarón
+517,254,8|apanado, queso. Bañado
+517,243,8|en salsa maracuyá y
+517,233,8|topping de wantan
+517,220,8|$6.500
+354,528,8|THIAGO
+354,513,8|Env. en Plátano: Salmón,
+354,503,8|queso, cebollín. Bañado en
+354,492,8|salsa maracuyá.
+354,479,8|$6.000
+352,242,8|TAKI
+352,228,8|Env. en Palta: Camarón
+352,218,8|apanado, palta. Coronado
+352,207,8|con tártaro de camarón
+352,197,8|flameado.
+352,183,8|$5.500
+352,316,7|IMPERIO ROLL
+352,301,7|Envuelto en salmón, relleno
+352,292,7|con camarón apanado y
+352,282,7|palta. Coronado con
+352,273,7|chimichurri de la casa.
+354,461,7|BEEF ROLLS
+354,445,7|Envuelto en lomo flameado,
+354,435,7|relleno con camarón apanado
+354,425,7|y palta. Coronado con
+354,415,7|chimichurri de la casa.
+354,401,7|$7.000
+354,383,6|TAKO GRILL ROLL
+354,370,7|Envuelto en queso, relleno con
+354,361,7|camarón apanado y palta.
+354,352,7|Coronado con pulpo a la parrilla
+354,342,7|y chimichurri de la casa.
+354,327,7|$7.000
+697,884,8|SAKE EBI
+697,870,8|Camarón, queso, palta
+698,856,8|$5.700
+697,791,8|SAKE FANNY
+698,777,8|Salmón, queso, cebollín,
+698,767,8|palta
+698,755,8|$6.000
+844,732,8|SAKE TAKO
+844,720,8|Pulpo, queso, palta
+845,707,8|$5.300
+844,818,8|Pollo apanado, queso,
+844,808,8|palta
+844,794,8|$5.300
+844,829,8|SAKE TORI
+697,829,8|Camarón apanado, queso,
+697,819,8|palta
+698,806,8|$6.000
+698,843,8|SAKE EBI TEMPURA
+844,779,8|SAKE TUNA
+843,765,8|Atún, queso, cebollín
+845,751,8|$6.000
+845,884,8|SAKE TEMPURA
+844,870,8|Champiñón apanado,
+844,860,8|queso, cebollín
+846,844,8|$4.700
+698,738,8|SAKE
+698,725,8|Salmón, queso, cebollín
+697,711,8|$5.800
+352,261,7|$7.000
+693,667,33|ROLLS
+802,661,36|NIKKEI
+688,563,8|CELE
+688,550,8|Camarón apanado, queso,
+688,540,8|palta, bañado en salsa
+688,529,8|acevichada con topping
+688,515,8|$7.000
+688,640,8|ACEVICHADO
+688,626,8|Camarón, palta, queso.
+688,616,8|Coronado de pescado blanco,
+688,605,8|bañado de salsa acevichada
+688,595,8|con topping
+688,582,8|$7.000
+688,499,8|CEVICHE FURAI
+688,486,8|Frito: Camarón apanado,
+688,475,8|queso. Coronado con
+688,465,8|ceviche
+688,453,8|$7.500
+688,435,8|CEVICHE
+688,422,8|Camarón apanado, palta.
+688,411,8|Coronado de ceviche mixto
+688,398,8|$7.500
+688,381,8|GRATINADO FURAI
+688,367,8|Champiñón apanado,
+688,356,8|palmito, cebollín. Nori
+688,346,8|apanado con salsa spicy,
+688,336,8|wantan al hilo
+689,323,8|$7.500
+854,640,7|HUANCAÍNA
+854,629,7|Env. en Salmón:
+854,619,7|Camarón, queso. Bañado
+854,609,7|con salsa huancaína,
+854,599,7|topping de papa hilo.
+854,585,7|$7.000
+854,524,7|$7.000
+854,570,7|KAREN
+854,558,7|Env. en Palta: Camarón
+854,548,7|apanado, palta. Coronado
+854,538,7|con tartar de kanikama
+856,458,7|$7.000
+855,512,7|LIMA
+855,500,7|Env. en Palta: Queso, palta.
+855,490,7|Coronado de camarón
+855,480,7|apanado, bañado en salsa
+855,470,7|acevichada con topping
+856,430,7|Palta, queso, ciboulette.
+856,420,7|Coronado de Lomo Saltado
+856,409,7|$7.000
+856,442,7|LOMO
+854,395,7|MAGURO EBI SAKE
+854,383,7|Env. en Palta, salmón y
+854,372,7|atún. Camarón apanado,
+854,362,7|queso. Con salsa
+854,352,7|acevichada y topping
+855,338,7|$7.500
+689,177,7|XANDER
+689,163,7|Env. en Palta y Plátano: Queso,
+689,153,7|camarón tempura, tocino
+689,139,7|$7.500
+688,225,7|Env. en Palta: Pollo apanado,
+688,215,7|palta. Bañado en salsa olivo
+688,205,7|con topping
+688,237,7|OLIVO
+688,192,7|$7.500
+687,306,7|MAGURO
+687,251,7|$7.000
+687,293,7|Env. en Atún: Camarón
+687,284,7|apanado, queso, cebollín.
+687,274,7|Bañado en salsa acevichada
+687,264,7|con topping
+854,317,7|MARACUYÁ
+854,304,7|Env. en Salmón: Camarón
+854,294,7|apanado, queso. Bañado
+854,284,7|en salsa maracuyá con
+854,275,7|topping de wantan al hilo
+854,263,7|$7.000
+855,247,7|PANKO SHITAKE
+855,236,7|Frito: Pollo apanado, champiñón
+855,226,7|apanado, queso. Coronado con
+855,216,7|topping de papa hilo con salsa
+855,206,7|tari y teriyaki
+855,192,7|$7.500
+698,99,36|SASHIMIS
+848,100,10|9 CORTES
+491,92,8|TAKO
+357,31,8|$2.700
+491,73,8|$2.700
+488,46,8|SAKE
+490,31,8|$3.000
+357,46,8|MAGURO
+357,91,8|EBI
+357,73,8|$2.500
+694,43,8|$10.500
+912,60,8|PULPO
+910,43,8|$10.500
+695,60,8|MIXTO
+793,59,8|SALMÓN
+792,42,8|$11.000
+1166,554,8|TAKO
+1166,544,8|Pulpo, palta
+1166,637,8|MAGURO
+1166,627,8|Atún, palta
+1037,619,8|$3.300
+1036,640,8|EBI
+1038,575,8|$3.500
+1038,595,8|FRESH
+1037,535,8|$2.800
+1037,555,8|HAZU
+1036,630,8|Camarón, queso
+1037,586,8|Pepino, palta
+1038,546,8|Kanikama, queso
+1166,616,8|$3.500
+1148,578,8|$3.500
+1147,598,8|SAKE
+1147,589,8|Salmón, queso
+1166,534,8|$3.500
+1031,671,39|HOSOMAKIS
+1222,671,11|6 CORTES
+1033,905,35|SUSHI
+1136,903,38|BURGERS
+1035,870,7|SAKE BURGER
+1033,857,7|Salmón, queso, palta
+1033,842,7|$8.000
+1031,814,8|KATZU BURGER
+1031,803,8|Pollo apanado, queso, palta
+1031,788,8|$7.000
+1201,872,7|EBI BURGER
+1198,832,7|$7.000
+1207,817,7|TRADICIONAL BURGER
+1204,802,7|Pollo apanado, queso,
+1204,792,7|palta, cebollín
+1204,779,7|$7.000
+1033,768,7|VEGGIE BURGER
+1032,730,7|$7.000
+1041,485,38|ENTRADAS
+1043,467,10|GYOSAS CAMARÓN $4.000
+1047,458,8|5 Unidades
+1043,444,10|GYOSAS CERDO $3.800
+1047,435,8|5 Unidades
+1045,421,10|GYOSAS POLLO $3.500
+1048,412,8|5 Unidades
+1045,398,10|ARROLLADO JAMÓN QUESO $4.000
+1048,389,8|5 Unidades
+1045,376,10|ARROLLADO PRIMAVERA $3.500
+1048,367,8|5 Unidades
+1033,305,39|GOHAN
+1128,183,10|GOHAN MIXTO
+1130,169,10|Salmón, camarón, pulpo, palta, salsa spicy
+1136,157,10|$8.000
+1082,235,10|GOHAN EBI FURAI
+1082,219,10|Camarón apanado, queso, cebollín, palta
+1082,206,10|$7.000
+1186,134,10|GOHAN TORI
+1186,119,10|Pollo apanado, queso, cebollín, palta
+1186,106,10|$7.000
+1034,283,10|GOHAN ACEVICHADO
+1034,268,10|Ceviche, camarón apanado, palta
+1034,253,10|$8.500
+1211,751,7|ARMA TU BURGER
+1212,738,7|4 ingredientes a
+1212,728,7|elección
+1212,716,7|$9.000
