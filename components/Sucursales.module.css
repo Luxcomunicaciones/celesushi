@@ -1,0 +1,109 @@
+.section {
+  scroll-margin-top: 90px;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 48px 20px 20px;
+}
+
+.eyebrow {
+  color: var(--red);
+  font-size: 12px;
+  font-weight: 800;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  margin-bottom: 8px;
+}
+
+.title {
+  margin: 0 0 6px;
+  font-size: clamp(28px, 4vw, 40px);
+  font-weight: 900;
+  letter-spacing: -0.02em;
+}
+
+.lead {
+  margin: 0 0 22px;
+  color: var(--muted);
+  font-size: 15px;
+  max-width: 70ch;
+}
+
+.lead strong {
+  color: var(--fg);
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  gap: 14px;
+}
+
+.card {
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: 16px;
+  padding: 18px;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  transition: border-color 0.18s;
+}
+
+.card:hover {
+  border-color: rgba(41, 171, 226, 0.4);
+}
+
+.comuna {
+  font-size: 17px;
+  font-weight: 900;
+}
+
+.dir {
+  font-size: 13.5px;
+  color: var(--muted);
+}
+
+.fono {
+  font-size: 13.5px;
+  color: var(--blue-soft);
+  font-weight: 700;
+}
+
+.actions {
+  display: flex;
+  gap: 8px;
+  margin-top: 10px;
+  flex-wrap: wrap;
+}
+
+.waButton {
+  flex: 1;
+  text-align: center;
+  background: var(--whatsapp);
+  color: var(--whatsapp-dark);
+  border-radius: 10px;
+  padding: 9px 12px;
+  font-size: 13px;
+  font-weight: 800;
+  transition: filter 0.15s;
+}
+
+.waButton:hover {
+  filter: brightness(1.1);
+}
+
+.callButton {
+  flex: 1;
+  text-align: center;
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  color: var(--fg-soft);
+  border-radius: 10px;
+  padding: 9px 12px;
+  font-size: 13px;
+  font-weight: 800;
+  transition: background 0.15s;
+}
+
+.callButton:hover {
+  background: rgba(255, 255, 255, 0.06);
+}

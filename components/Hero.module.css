@@ -1,0 +1,206 @@
+.section {
+  position: relative;
+  overflow: hidden;
+}
+
+.glow {
+  position: absolute;
+  inset: 0;
+  background:
+    radial-gradient(900px 500px at 78% 30%, rgba(41, 171, 226, 0.14), transparent 65%),
+    radial-gradient(600px 400px at 10% 90%, rgba(232, 25, 44, 0.08), transparent 60%);
+  pointer-events: none;
+}
+
+.inner {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 56px 20px 40px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 40px;
+  align-items: center;
+  position: relative;
+}
+
+.copy {
+  flex: 1 1 460px;
+  min-width: 300px;
+}
+
+.badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  border: 1px solid rgba(41, 171, 226, 0.4);
+  color: var(--blue-soft);
+  border-radius: 999px;
+  padding: 6px 14px;
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+}
+
+.headline {
+  margin: 18px 0 14px;
+  font-size: clamp(38px, 6vw, 64px);
+  line-height: 1.02;
+  font-weight: 900;
+  letter-spacing: -0.02em;
+}
+
+.headline span {
+  color: var(--blue);
+}
+
+.lead {
+  margin: 0 0 26px;
+  color: var(--muted);
+  font-size: 17px;
+  line-height: 1.6;
+  max-width: 52ch;
+}
+
+.ctas {
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+.ctaPrimary {
+  background: var(--red);
+  color: #fff;
+  border-radius: 12px;
+  padding: 14px 26px;
+  font-size: 15px;
+  font-weight: 800;
+  transition: background 0.15s;
+}
+
+.ctaPrimary:hover {
+  background: var(--red-hover);
+}
+
+.ctaSecondary {
+  border: 1px solid rgba(41, 171, 226, 0.55);
+  color: var(--blue);
+  border-radius: 12px;
+  padding: 14px 26px;
+  font-size: 15px;
+  font-weight: 800;
+  transition: all 0.15s;
+}
+
+.ctaSecondary:hover {
+  background: rgba(41, 171, 226, 0.1);
+}
+
+.stats {
+  display: flex;
+  gap: 28px;
+  flex-wrap: wrap;
+  margin-top: 34px;
+}
+
+.statDivider {
+  width: 1px;
+  background: rgba(255, 255, 255, 0.1);
+}
+
+.statValue {
+  font-size: 26px;
+  font-weight: 900;
+  color: var(--blue);
+}
+
+.statLabel {
+  font-size: 13px;
+  color: var(--muted);
+  font-weight: 500;
+}
+
+.imageCol {
+  flex: 1 1 400px;
+  min-width: 300px;
+}
+
+.imageCard {
+  position: relative;
+  border-radius: 24px;
+  overflow: hidden;
+  background: #000;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  box-shadow: 0 30px 80px rgba(0, 0, 0, 0.5);
+  aspect-ratio: 3 / 2;
+}
+
+.slide {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: opacity 1s ease;
+}
+
+.caption {
+  position: absolute;
+  right: 14px;
+  top: 14px;
+  background: rgba(11, 13, 18, 0.82);
+  backdrop-filter: blur(8px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 999px;
+  padding: 8px 16px;
+  font-size: 13px;
+  font-weight: 800;
+  color: var(--fg-soft);
+}
+
+.waTag {
+  position: absolute;
+  left: 14px;
+  bottom: 14px;
+  background: rgba(11, 13, 18, 0.82);
+  backdrop-filter: blur(8px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 12px;
+  padding: 10px 14px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.waDot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: var(--whatsapp);
+}
+
+.waLabel {
+  font-size: 13px;
+  font-weight: 700;
+  color: var(--fg-soft);
+}
+
+.dots {
+  position: absolute;
+  right: 16px;
+  bottom: 16px;
+  display: flex;
+  gap: 6px;
+}
+
+.dot {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  transition: background 0.4s;
+  background: rgba(255, 255, 255, 0.35);
+}
+
+.dotActive {
+  background: var(--blue);
+}

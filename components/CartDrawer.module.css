@@ -1,0 +1,250 @@
+.overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 100;
+}
+
+.backdrop {
+  position: absolute;
+  inset: 0;
+  background: rgba(4, 6, 10, 0.68);
+  backdrop-filter: blur(3px);
+}
+
+.panel {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  width: min(430px, 100vw);
+  background: var(--card);
+  border-left: 1px solid rgba(255, 255, 255, 0.09);
+  display: flex;
+  flex-direction: column;
+  box-shadow: -24px 0 60px rgba(0, 0, 0, 0.5);
+}
+
+.head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 18px 20px;
+  border-bottom: 1px solid var(--border);
+}
+
+.headTitle {
+  margin: 0;
+  font-size: 20px;
+  font-weight: 900;
+}
+
+.closeBtn {
+  width: 36px;
+  height: 36px;
+  border: 1px solid rgba(255, 255, 255, 0.14);
+  background: transparent;
+  color: #c7d3dd;
+  border-radius: 50%;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+.closeBtn:hover {
+  background: rgba(255, 255, 255, 0.07);
+}
+
+.body {
+  flex: 1;
+  overflow: auto;
+  padding: 16px 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.empty {
+  text-align: center;
+  padding: 40px 10px;
+  color: var(--muted);
+}
+
+.emptyTitle {
+  font-weight: 800;
+  color: var(--fg-soft);
+  font-size: 16px;
+  margin-bottom: 6px;
+}
+
+.emptyText {
+  font-size: 13.5px;
+  line-height: 1.5;
+  margin-bottom: 18px;
+}
+
+.emptyCta {
+  background: var(--blue);
+  color: var(--blue-dark);
+  border: none;
+  border-radius: 999px;
+  padding: 11px 22px;
+  font-size: 14px;
+  font-weight: 800;
+  cursor: pointer;
+}
+
+.emptyCta:hover {
+  background: var(--blue-hover);
+}
+
+.line {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  background: var(--bg);
+  border: 1px solid var(--border);
+  border-radius: 14px;
+  padding: 12px 14px;
+}
+
+.lineInfo {
+  flex: 1;
+  min-width: 0;
+}
+
+.lineName {
+  font-size: 14px;
+  font-weight: 800;
+}
+
+.lineUnit {
+  font-size: 12.5px;
+  color: var(--muted);
+  margin-top: 2px;
+}
+
+.stepper {
+  display: flex;
+  align-items: center;
+  gap: 2px;
+  background: var(--card);
+  border: 1px solid rgba(41, 171, 226, 0.45);
+  border-radius: 999px;
+  padding: 2px;
+}
+
+.stepperBtn {
+  width: 26px;
+  height: 26px;
+  border: none;
+  background: transparent;
+  color: var(--blue);
+  font-size: 16px;
+  font-weight: 800;
+  cursor: pointer;
+  border-radius: 50%;
+}
+
+.stepperBtn:hover {
+  background: rgba(41, 171, 226, 0.15);
+}
+
+.stepperQty {
+  min-width: 20px;
+  text-align: center;
+  font-weight: 800;
+  font-size: 13px;
+}
+
+.lineSub {
+  font-size: 14px;
+  font-weight: 900;
+  min-width: 64px;
+  text-align: right;
+}
+
+.footer {
+  padding: 16px 20px 20px;
+  border-top: 1px solid var(--border);
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.sucLabel {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  font-size: 12px;
+  font-weight: 800;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--blue-soft);
+}
+
+.select {
+  background: var(--bg);
+  color: var(--fg);
+  border: 1px solid rgba(255, 255, 255, 0.14);
+  border-radius: 10px;
+  padding: 11px 12px;
+  font-size: 14px;
+  font-weight: 600;
+  font-family: inherit;
+}
+
+.totalRow {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.totalLabel {
+  color: var(--muted);
+  font-size: 14px;
+  font-weight: 600;
+}
+
+.totalValue {
+  font-size: 24px;
+  font-weight: 900;
+}
+
+.submit {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  border-radius: 12px;
+  padding: 15px 20px;
+  font-size: 15px;
+  font-weight: 900;
+  background: var(--whatsapp);
+  color: var(--whatsapp-dark);
+  cursor: pointer;
+  transition: filter 0.15s;
+}
+
+.submit:hover {
+  filter: brightness(1.1);
+}
+
+.submitDisabled {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  border-radius: 12px;
+  padding: 15px 20px;
+  font-size: 15px;
+  font-weight: 900;
+  background: rgba(255, 255, 255, 0.08);
+  color: var(--muted-dim);
+}
+
+.disclaimer {
+  margin: 0;
+  color: var(--muted-dim);
+  font-size: 12px;
+  line-height: 1.5;
+  text-align: center;
+}

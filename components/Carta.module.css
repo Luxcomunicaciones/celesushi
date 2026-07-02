@@ -1,0 +1,168 @@
+.section {
+  scroll-margin-top: 90px;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 48px 20px 20px;
+}
+
+.eyebrow {
+  color: var(--blue);
+  font-size: 12px;
+  font-weight: 800;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  margin-bottom: 8px;
+}
+
+.title {
+  margin: 0 0 18px;
+  font-size: clamp(28px, 4vw, 40px);
+  font-weight: 900;
+  letter-spacing: -0.02em;
+}
+
+.tabs {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+  margin-bottom: 22px;
+}
+
+.tab {
+  font-size: 13px;
+  font-weight: 800;
+  border-radius: 999px;
+  padding: 9px 16px;
+  cursor: pointer;
+  border: 1px solid rgba(255, 255, 255, 0.16);
+  background: transparent;
+  color: #c7d3dd;
+  transition: all 0.15s;
+}
+
+.tab:hover {
+  border-color: rgba(41, 171, 226, 0.6);
+  color: #fff;
+}
+
+.tabActive {
+  background: var(--blue);
+  color: var(--blue-dark);
+  border: 1px solid var(--blue);
+}
+
+.tabActive:hover {
+  border-color: var(--blue);
+  color: var(--blue-dark);
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+  gap: 12px;
+}
+
+.row {
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: 14px;
+  padding: 14px 16px;
+  display: flex;
+  gap: 14px;
+  align-items: center;
+  transition: border-color 0.18s;
+}
+
+.row:hover {
+  border-color: rgba(41, 171, 226, 0.35);
+}
+
+.image {
+  width: 62px;
+  height: 62px;
+  border-radius: 12px;
+  object-fit: cover;
+  background: #000;
+  flex: none;
+}
+
+.info {
+  flex: 1;
+  min-width: 0;
+}
+
+.name {
+  font-size: 15px;
+  font-weight: 800;
+  letter-spacing: 0.01em;
+}
+
+.desc {
+  font-size: 12.5px;
+  color: var(--muted);
+  line-height: 1.45;
+  margin-top: 2px;
+}
+
+.actions {
+  display: flex;
+  flex-direction: column;
+  align-items: end;
+  gap: 8px;
+  flex: none;
+}
+
+.price {
+  font-size: 15px;
+  font-weight: 900;
+  color: var(--blue-soft);
+}
+
+.stepper {
+  display: flex;
+  align-items: center;
+  gap: 2px;
+  background: var(--bg);
+  border: 1px solid rgba(41, 171, 226, 0.5);
+  border-radius: 999px;
+  padding: 2px;
+}
+
+.stepperBtn {
+  width: 26px;
+  height: 26px;
+  border: none;
+  background: transparent;
+  color: var(--blue);
+  font-size: 16px;
+  font-weight: 800;
+  cursor: pointer;
+  border-radius: 50%;
+}
+
+.stepperBtn:hover {
+  background: rgba(41, 171, 226, 0.15);
+}
+
+.stepperQty {
+  min-width: 20px;
+  text-align: center;
+  font-weight: 800;
+  font-size: 13px;
+}
+
+.addButton {
+  background: transparent;
+  border: 1px solid rgba(41, 171, 226, 0.55);
+  color: var(--blue);
+  border-radius: 999px;
+  padding: 6px 14px;
+  font-size: 12.5px;
+  font-weight: 800;
+  cursor: pointer;
+  transition: all 0.15s;
+}
+
+.addButton:hover {
+  background: rgba(41, 171, 226, 0.12);
+}
