@@ -82,3 +82,21 @@
   font-weight: 800;
   padding: 0 6px;
 }
+
+@media (max-width: 680px) {
+  .inner {
+    flex-wrap: nowrap;
+  }
+
+  .logo {
+    height: 38px;
+  }
+
+  .navLink {
+    display: none;
+  }
+
+  .cartButton {
+    margin-left: auto;
+  }
+}
