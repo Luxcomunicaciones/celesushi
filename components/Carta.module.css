@@ -73,6 +73,22 @@
   transition: border-color 0.18s;
 }
 
+.nameRow {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.heartBtn {
+  background: none;
+  border: none;
+  color: var(--red);
+  cursor: pointer;
+  padding: 2px;
+  display: flex;
+  flex: none;
+}
+
 .row:hover {
   border-color: rgba(41, 171, 226, 0.35);
 }

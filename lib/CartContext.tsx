@@ -17,8 +17,10 @@ type CartLine = {
   id: string;
   name: string;
   unit: string;
+  unitPrice: number;
   qty: number;
   sub: string;
+  subtotal: number;
 };
 
 type CartContextValue = {
@@ -27,6 +29,7 @@ type CartContextValue = {
   changeQty: (id: string, delta: number) => void;
   cartCount: number;
   total: string;
+  totalAmount: number;
   cartLines: CartLine[];
   cartEmpty: boolean;
   open: boolean;
@@ -106,8 +109,10 @@ export function CartProvider({ children }: { children: React.ReactNode }) {
           id,
           name: p.name,
           unit: clp(p.price),
+          unitPrice: p.price,
           qty: cart[id],
           sub: clp(p.price * cart[id]),
+          subtotal: p.price * cart[id],
         };
       }),
     [cartIds, cart, products]
@@ -131,6 +136,7 @@ export function CartProvider({ children }: { children: React.ReactNode }) {
     changeQty,
     cartCount,
     total: clp(totalN),
+    totalAmount: totalN,
     cartLines,
     cartEmpty: cartCount === 0,
     open,

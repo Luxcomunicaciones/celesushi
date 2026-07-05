@@ -4,11 +4,13 @@ import { useState } from "react";
 import { PROMO_TABS, PROMOS, PromoTab } from "@/lib/data";
 import { clp } from "@/lib/format";
 import { useCart } from "@/lib/CartContext";
+import { useAccount } from "@/lib/AccountContext";
 import styles from "./Promos.module.css";
 
 export default function Promos() {
   const [tab, setTab] = useState<PromoTab>("mixtas");
   const { qtyOf, changeQty } = useCart();
+  const { isFavorite, toggleFavorite } = useAccount();
   const promos = PROMOS.filter((p) => p.tab === tab);
 
   return (
@@ -39,6 +41,22 @@ export default function Promos() {
                 {/* eslint-disable-next-line @next/next/no-img-element */}
                 <img src={p.img} alt={p.name} loading="lazy" className={styles.image} />
                 <span className={styles.pzsBadge}>{p.pzs} piezas</span>
+                <button
+                  onClick={() => toggleFavorite(p.id)}
+                  className={styles.heartBtn}
+                  aria-label={isFavorite(p.id) ? `Quitar ${p.name} de favoritos` : `Agregar ${p.name} a favoritos`}
+                >
+                  <svg
+                    viewBox="0 0 24 24"
+                    width="16"
+                    height="16"
+                    fill={isFavorite(p.id) ? "currentColor" : "none"}
+                    stroke="currentColor"
+                    strokeWidth="2"
+                  >
+                    <path d="M12 21s-7.5-4.6-10-9.3C.5 8.4 2.1 5 5.4 5c1.9 0 3.3 1 4 2.3.7-1.3 2.1-2.3 4-2.3 3.3 0 4.9 3.4 3.4 6.7C19.5 16.4 12 21 12 21z" />
+                  </svg>
+                </button>
               </div>
               <div className={styles.body}>
                 <h3 className={styles.name}>{p.name}</h3>

@@ -4,11 +4,13 @@ import { useState } from "react";
 import { CARTA, resolveItemImg } from "@/lib/data";
 import { clp } from "@/lib/format";
 import { useCart } from "@/lib/CartContext";
+import { useAccount } from "@/lib/AccountContext";
 import styles from "./Carta.module.css";
 
 export default function Carta() {
   const [cat, setCat] = useState(CARTA[0].id);
   const { qtyOf, changeQty } = useCart();
+  const { isFavorite, toggleFavorite } = useAccount();
   const activeCat = CARTA.find((c) => c.id === cat) || CARTA[0];
 
   return (
@@ -37,7 +39,25 @@ export default function Carta() {
                 <img src={img} alt={i.name} loading="lazy" className={styles.image} />
               )}
               <div className={styles.info}>
-                <div className={styles.name}>{i.name}</div>
+                <div className={styles.nameRow}>
+                  <div className={styles.name}>{i.name}</div>
+                  <button
+                    onClick={() => toggleFavorite(i.id)}
+                    className={styles.heartBtn}
+                    aria-label={isFavorite(i.id) ? `Quitar ${i.name} de favoritos` : `Agregar ${i.name} a favoritos`}
+                  >
+                    <svg
+                      viewBox="0 0 24 24"
+                      width="15"
+                      height="15"
+                      fill={isFavorite(i.id) ? "currentColor" : "none"}
+                      stroke="currentColor"
+                      strokeWidth="2"
+                    >
+                      <path d="M12 21s-7.5-4.6-10-9.3C.5 8.4 2.1 5 5.4 5c1.9 0 3.3 1 4 2.3.7-1.3 2.1-2.3 4-2.3 3.3 0 4.9 3.4 3.4 6.7C19.5 16.4 12 21 12 21z" />
+                    </svg>
+                  </button>
+                </div>
                 <div className={styles.desc}>{i.desc}</div>
               </div>
               <div className={styles.actions}>
